@@ -1,0 +1,40 @@
+%ul
+- @styles.each do |style|
+  %li
+    %span= style.name
+    %span= style.shoe
+    %span= style.beard
+    %span= style.drink
+    %span= style.browser
+
+
+%div.row
+  %div.columns.large-3
+    %div.controls
+      %div.new
+        = button_tag 'New Style', :id => 'new_style', :class => 'button radius success tiny'
+
+      %div.form.invisible
+        = form_tag do
+          = label_tag 'name'
+          = text_field_tag 'name'
+          = label_tag 'shoe'
+          = text_field_tag 'shoe'
+          = label_tag 'beard'
+          = text_field_tag 'beard'
+          = label_tag 'drink'
+          = text_field_tag 'drink'
+          = label_tag 'browser'
+          = text_field_tag 'browser'
+          = link_to('Cancel', '#', :id=>'cancel_style', :class => 'button radius tiny alert')
+          = submit_tag 'Create New Style', :id => 'create_style', :class => 'button radius tiny'
+          = submit_tag 'Edit Style', :id => 'update_style', :class => 'button radius success tiny'
+  %div.columns.large-9
+
+
+
+
+
+
+
+
